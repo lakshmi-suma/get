@@ -31,7 +31,7 @@ data "ibm_container_vpc_cluster_worker" "worker1" {
 # }
 
 #To filter the ip address and store in a list
-local  {
+locals  {
 #   depends_on = [ data.ibm_container_vpc_cluster_worker.worker1 ]
   ip = [
     for i in data.ibm_container_vpc_cluster.cluster1.workers:
