@@ -18,7 +18,7 @@ data "ibm_container_vpc_cluster_worker" "worker1" {
   # count = length(local.ids)
   # # name               = "diag-rule"
   # worker_id = local.ids[count.index]
-  for_each= local.ids
+  for_each= toset(local.ids)
   worker_id = each.value
   cluster_name_id = "chlgf8bd04sv0te97o4g"
 #   depends_on = [ ibm_container_vpc_cluster.cluster5]
