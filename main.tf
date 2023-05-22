@@ -25,10 +25,10 @@ data "ibm_container_vpc_cluster_worker" "worker1" {
 }
 
 #To print the information about the workers
-output "ip_address" {
-  value=data.ibm_container_vpc_cluster_worker.worker1
-  depends_on = [ data.ibm_container_vpc_cluster_worker.worker1 ]
-}
+# output "ip_address" {
+#   value=data.ibm_container_vpc_cluster_worker.worker1
+#   depends_on = [ data.ibm_container_vpc_cluster_worker.worker1 ]
+# }
 
 #To filter the ip address and store in a list
 output "ip" {
