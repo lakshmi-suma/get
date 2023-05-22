@@ -1,3 +1,19 @@
+
+data "ibm_container_vpc_cluster" "cluster1" {
+  name  = "test-cluster1"
+  
+  
+}
+# Print the id's of the workers
+output "workers" {
+  value = data.ibm_container_vpc_cluster.cluster1.workers
+  depends_on = [ data.ibm_container_vpc_cluster.cluster1 ]
+  
+}
+
+locals {
+  ids=data.ibm_container_vpc_cluster.cluster1.workers
+}
 data "ibm_container_vpc_cluster_worker" "worker1" {
   # count = length(local.ids)
   # # name               = "diag-rule"
