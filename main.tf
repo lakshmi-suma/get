@@ -20,7 +20,7 @@ data "ibm_container_vpc_cluster_worker" "worker1" {
   # worker_id = local.ids[count.index]
   for_each= toset(local.ids)
   worker_id = each.value
-  cluster_name_id = "chlgf8bd04sv0te97o4g"
+  cluster_name_id = "chm6fpgd0k522791istg"
 #   depends_on = [ ibm_container_vpc_cluster.cluster5]
 }
 
